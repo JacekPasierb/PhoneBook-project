@@ -2,7 +2,7 @@ import { useAuth } from "../Hooks/useAuth";
 import { Navigation } from "../Navigation/Navigation";
 import { AuthNav } from "../AuthNav/AuthNav";
 
-import { UserMenu } from "../UserMenu/UserMenu";
+import { UserMenu } from "../../components/userMenu/UserMenu";
 import css from "./AppContainer.module.css";
 
 export const AppContainer = () => {
