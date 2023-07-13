@@ -1,6 +1,6 @@
 import css from "./ContactFormStyle.module.css";
 import { useState } from "react";
-import { nanoid } from "nanoid";
+
 import { useDispatch, useSelector } from "react-redux";
 import { addContact } from "../../redux/operations";
 import { selectContacts } from "../../redux/selectors";
@@ -22,8 +22,8 @@ export const ContactForm = () => {
       alert(`Kontakt ${name} już istnieje!`);
       return;
     }
-    const id = nanoid();
-    dispatch(addContact({ id, name, number }));
+    
+    dispatch(addContact({  name, number }));
     setName("");
     setNumber("");
   };
