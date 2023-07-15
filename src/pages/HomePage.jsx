@@ -16,8 +16,8 @@ export const HomePage = () => {
                 Phonebook
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Your all contacts in one place ! LogIn or Register if you
-                haven't your account else.. Keep your friends close
+                Keep all your contacts in one place! Log in or register if you
+                don't have an account yet. Otherwise, keep your friends close.
               </Typography>
             </CardContent>
           </Card>
