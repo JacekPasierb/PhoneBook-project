@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate} from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { register } from "../../redux/Auth/operations";
+import { logIn, register } from "../../redux/Auth/operations";
+
 import {
   Avatar,
   Box,
@@ -50,11 +51,12 @@ export const RegisterForm = () => {
           password: password,
         })
       );
-     
+    
       form.reset();
     } else {
       setPasswordMatch(false);
     }
+  
   };
 
   return (

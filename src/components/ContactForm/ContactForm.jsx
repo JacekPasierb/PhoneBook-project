@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addContact } from "../../redux/operations";
 import { selectContacts } from "../../redux/selectors";
+import { Button } from "@mui/material";
+import { PersonAdd } from "@mui/icons-material";
 
 export const ContactForm = () => {
   const [name, setName] = useState("");
@@ -54,7 +56,9 @@ export const ContactForm = () => {
           value={number}
         />
       </label>
-      <button type="submit">Add contact</button>
+      <Button variant="outlined" type="submit" style={{marginTop:"10px"}} startIcon={<PersonAdd/>}>
+        Add contact
+      </Button>
     </form>
   );
 };
