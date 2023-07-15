@@ -1,5 +1,9 @@
+
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import Notiflix from "notiflix";
+import { useNavigate, useNavigation } from "react-router-dom";
+
 
 axios.defaults.baseURL = "https://connections-api.herokuapp.com/";
 
@@ -17,8 +21,12 @@ export const register = createAsyncThunk(
     try {
       const response = await axios.post('/users/signup', credentials);
       setAuthHeader(response.data.token);
+      Notiflix.Notify.success("Success ! You can Log In now.");
+    
+     
       return response.data;
     } catch (e) {
+      Notiflix.Notify.failure("Something went wrong. Please, try again .");
       return thunkAPI.rejectWithValue(e.message)
     }
   }
@@ -29,8 +37,10 @@ export const logIn = createAsyncThunk(
     try {
       const response = await axios.post('/users/login', credentials);
       setAuthHeader(response.data.token);
+       
       return response.data;
     } catch (e) {
+      Notiflix.Notify.failure("Something went wrong. Please, try again .");
       return thunkAPI.rejectWithValue(e.message)
     }
   }

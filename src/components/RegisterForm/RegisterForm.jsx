@@ -50,6 +50,7 @@ export const RegisterForm = () => {
           password: password,
         })
       );
+     
       form.reset();
     } else {
       setPasswordMatch(false);
